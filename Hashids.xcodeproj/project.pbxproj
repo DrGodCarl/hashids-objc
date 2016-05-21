@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CA55CE451CEFF8D600219779 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE441CEFF8D600219779 /* main.m */; };
 		CA55CE481CEFF8EF00219779 /* Hashids.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE471CEFF8EF00219779 /* Hashids.m */; };
+		CA55CE561CEFFE6A00219779 /* TestHashids.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE551CEFFE6A00219779 /* TestHashids.m */; };
+		CA55CE571CEFFF6900219779 /* Hashids.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE471CEFF8EF00219779 /* Hashids.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,10 +30,20 @@
 		CA55CE441CEFF8D600219779 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CA55CE461CEFF8EF00219779 /* Hashids.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hashids.h; sourceTree = "<group>"; };
 		CA55CE471CEFF8EF00219779 /* Hashids.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hashids.m; sourceTree = "<group>"; };
+		CA55CE4D1CEFFE4B00219779 /* HashidsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HashidsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA55CE511CEFFE4B00219779 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA55CE551CEFFE6A00219779 /* TestHashids.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHashids.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CA55CE361CEFF87200219779 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA55CE4A1CEFFE4B00219779 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				CA55CE431CEFF8D600219779 /* Hashids */,
+				CA55CE4E1CEFFE4B00219779 /* HashidsTests */,
 				CA55CE3A1CEFF87200219779 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				CA55CE391CEFF87200219779 /* Hashids */,
+				CA55CE4D1CEFFE4B00219779 /* HashidsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,6 +79,15 @@
 				CA55CE471CEFF8EF00219779 /* Hashids.m */,
 			);
 			path = Hashids;
+			sourceTree = "<group>";
+		};
+		CA55CE4E1CEFFE4B00219779 /* HashidsTests */ = {
+			isa = PBXGroup;
+			children = (
+				CA55CE511CEFFE4B00219779 /* Info.plist */,
+				CA55CE551CEFFE6A00219779 /* TestHashids.m */,
+			);
+			path = HashidsTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +110,23 @@
 			productReference = CA55CE391CEFF87200219779 /* Hashids */;
 			productType = "com.apple.product-type.tool";
 		};
+		CA55CE4C1CEFFE4B00219779 /* HashidsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA55CE521CEFFE4B00219779 /* Build configuration list for PBXNativeTarget "HashidsTests" */;
+			buildPhases = (
+				CA55CE491CEFFE4B00219779 /* Sources */,
+				CA55CE4A1CEFFE4B00219779 /* Frameworks */,
+				CA55CE4B1CEFFE4B00219779 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HashidsTests;
+			productName = HashidsTests;
+			productReference = CA55CE4D1CEFFE4B00219779 /* HashidsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -97,6 +137,9 @@
 				ORGANIZATIONNAME = "Carl Benson";
 				TargetAttributes = {
 					CA55CE381CEFF87200219779 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					CA55CE4C1CEFFE4B00219779 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -114,9 +157,20 @@
 			projectRoot = "";
 			targets = (
 				CA55CE381CEFF87200219779 /* Hashids */,
+				CA55CE4C1CEFFE4B00219779 /* HashidsTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA55CE4B1CEFFE4B00219779 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CA55CE351CEFF87200219779 /* Sources */ = {
@@ -125,6 +179,15 @@
 			files = (
 				CA55CE481CEFF8EF00219779 /* Hashids.m in Sources */,
 				CA55CE451CEFF8D600219779 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA55CE491CEFFE4B00219779 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA55CE571CEFFF6900219779 /* Hashids.m in Sources */,
+				CA55CE561CEFFE6A00219779 /* TestHashids.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +289,28 @@
 			};
 			name = Release;
 		};
+		CA55CE531CEFFE4B00219779 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HashidsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicknacklabs.HashidsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CA55CE541CEFFE4B00219779 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HashidsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicknacklabs.HashidsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -246,6 +331,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		CA55CE521CEFFE4B00219779 /* Build configuration list for PBXNativeTarget "HashidsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA55CE531CEFFE4B00219779 /* Debug */,
+				CA55CE541CEFFE4B00219779 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
