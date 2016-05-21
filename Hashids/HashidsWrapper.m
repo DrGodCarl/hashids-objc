@@ -61,12 +61,13 @@
 
 - (NSString *)encodeMany:(NSArray<NSNumber*> *)values {
     uint32_t count = (uint32_t)[values count];
-    char buffer[256];
     unsigned long long vals[count];
     for (int i = 0; i < count; i++) {
         unsigned long long value = [values[i] unsignedLongLongValue];
         vals[i] = value;
     }
+    uint32_t estimation = hashids_estimate_encoded_size(self.hashid, count, vals);
+    char buffer[estimation];
     if (hashids_encode(self.hashid, buffer, (uint32_t)[values count], vals)) {
         return [NSString stringWithCString:buffer encoding:NSASCIIStringEncoding];
     }
@@ -74,8 +75,9 @@
 }
 
 - (NSArray<NSNumber *> *)decode:(NSString *)encodedValue {
-    unsigned long long numbers[16];
     const char * cEncodedValue = [encodedValue cStringUsingEncoding:NSASCIIStringEncoding];
+    uint32_t numberCount = hashids_numbers_count(self.hashid, (char *)cEncodedValue);
+    unsigned long long numbers[numberCount];
     unsigned int resultCount = hashids_decode(self.hashid, (char *)cEncodedValue, numbers);
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:resultCount];
     for (int i = 0; i < resultCount; i++) {

@@ -85,4 +85,23 @@ NSString * const SALT = @"this is my salt";
     XCTAssertEqualObjects([hashids encodeMany:testArray], [hashids encode:testNum]);
 }
 
+- (void)testLong {
+    NSMutableArray *testArray = [[NSMutableArray alloc] initWithCapacity:1000];
+    for (int i = 0; i < 1000; i++) {
+        [testArray addObject:@(i)];
+    }
+    HashidsWrapper *hashids = [[HashidsWrapper alloc] initWithSalt:SALT];
+    XCTAssertEqualObjects(testArray, [hashids decode:[hashids encodeMany:testArray]]);
+}
+
+// Uncomment and watch memory to verify no leaks.
+//- (void)testLots {
+//    HashidsWrapper *hashids = [[HashidsWrapper alloc] initWithSalt:SALT];
+//    for (int i = 0; i < 10000000; i++) {
+//        @autoreleasepool {
+//            XCTAssertEqualObjects(@(i), [hashids decode:[hashids encode:@(i)]][0]);
+//        }
+//    }
+//}
+
 @end
