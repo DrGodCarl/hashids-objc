@@ -19,7 +19,8 @@
                minHashLength:(NSUInteger)minHashLength
                     alphabet:(NSString *)alphabet;
 
-- (NSString *)encode:(NSNumber *)value, ... NS_REQUIRES_NIL_TERMINATION;
+- (NSString *)encode:(NSNumber *)value;
+- (NSString *)encodeMany:(NSArray<NSNumber*> *)values;
 
 - (NSArray<NSNumber*> *)decode:(NSString *)encodedValue;
 
