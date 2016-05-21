@@ -11,7 +11,7 @@
 
 @interface NNLHashids ()
 
-@property (nonatomic) struct hashids_t *hashid;
+@property (nonatomic) struct hashids_t *hashids;
 
 @end
 
@@ -21,7 +21,7 @@
     if (self = [super init]) {
         salt = salt ?: @"";
         const char *cSalt = [salt cStringUsingEncoding:NSASCIIStringEncoding];
-        self.hashid = hashids_init(cSalt);
+        self.hashids = hashids_init(cSalt);
     }
     return self;
 }
@@ -31,7 +31,7 @@
     if (self = [super init]) {
         salt = salt ?: @"";
         const char *cSalt = [salt cStringUsingEncoding:NSASCIIStringEncoding];
-        self.hashid = hashids_init2(cSalt, minHashLength);
+        self.hashids = hashids_init2(cSalt, minHashLength);
     }
     return self;
 }
@@ -44,14 +44,14 @@
         salt = salt ?: @"";
         const char *cSalt = [salt cStringUsingEncoding:NSASCIIStringEncoding];
         const char *cAlphabet = [alphabet cStringUsingEncoding:NSASCIIStringEncoding];
-        self.hashid = hashids_init3(cSalt, minHashLength, cAlphabet);
+        self.hashids = hashids_init3(cSalt, minHashLength, cAlphabet);
     }
     return self;
 }
 
 - (void)dealloc {
-    if (self.hashid) {
-        hashids_free(self.hashid);
+    if (self.hashids) {
+        hashids_free(self.hashids);
     }
 }
 
@@ -66,9 +66,9 @@
         unsigned long long value = [values[i] unsignedLongLongValue];
         vals[i] = value;
     }
-    uint32_t estimation = hashids_estimate_encoded_size(self.hashid, count, vals);
+    uint32_t estimation = hashids_estimate_encoded_size(self.hashids, count, vals);
     char buffer[estimation];
-    if (hashids_encode(self.hashid, buffer, (uint32_t)[values count], vals)) {
+    if (hashids_encode(self.hashids, buffer, (uint32_t)[values count], vals)) {
         return [NSString stringWithCString:buffer encoding:NSASCIIStringEncoding];
     }
     return nil;
@@ -76,9 +76,9 @@
 
 - (NSArray<NSNumber *> *)decode:(NSString *)encodedValue {
     const char * cEncodedValue = [encodedValue cStringUsingEncoding:NSASCIIStringEncoding];
-    uint32_t numberCount = hashids_numbers_count(self.hashid, (char *)cEncodedValue);
+    uint32_t numberCount = hashids_numbers_count(self.hashids, (char *)cEncodedValue);
     unsigned long long numbers[numberCount];
-    unsigned int resultCount = hashids_decode(self.hashid, (char *)cEncodedValue, numbers);
+    unsigned int resultCount = hashids_decode(self.hashids, (char *)cEncodedValue, numbers);
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:resultCount];
     for (int i = 0; i < resultCount; i++) {
         [result addObject:@(numbers[i])];
