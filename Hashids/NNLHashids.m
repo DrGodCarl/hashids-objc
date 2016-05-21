@@ -74,12 +74,12 @@
     return nil;
 }
 
-- (NSArray<NSNumber *> *)decode:(NSString *)encodedValue {
+- (NSArray<NSNumber*> *)decode:(NSString *)encodedValue {
     const char * cEncodedValue = [encodedValue cStringUsingEncoding:NSASCIIStringEncoding];
     uint32_t numberCount = hashids_numbers_count(self.hashids, (char *)cEncodedValue);
     unsigned long long numbers[numberCount];
     unsigned int resultCount = hashids_decode(self.hashids, (char *)cEncodedValue, numbers);
-    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:resultCount];
+    NSMutableArray<NSNumber*> *result = [[NSMutableArray alloc] initWithCapacity:resultCount];
     for (int i = 0; i < resultCount; i++) {
         [result addObject:@(numbers[i])];
     }
