@@ -6,16 +6,16 @@
 //  Copyright © 2016 Carl Benson. All rights reserved.
 //
 
-#import "HashidsWrapper.h"
+#import "NNLHashids.h"
 #include "hashids.c/hashids.h"
 
-@interface HashidsWrapper ()
+@interface NNLHashids ()
 
 @property (nonatomic) struct hashids_t *hashid;
 
 @end
 
-@implementation HashidsWrapper
+@implementation NNLHashids
 
 - (instancetype)initWithSalt:(NSString *)salt {
     if (self = [super init]) {

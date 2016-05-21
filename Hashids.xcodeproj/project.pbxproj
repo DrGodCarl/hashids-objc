@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA55CE481CEFF8EF00219779 /* HashidsWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE471CEFF8EF00219779 /* HashidsWrapper.m */; };
+		CA55CE481CEFF8EF00219779 /* NNLHashids.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE471CEFF8EF00219779 /* NNLHashids.m */; };
 		CA55CE7B1CF01A7400219779 /* hashids.c in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE721CF01A7400219779 /* hashids.c */; };
 		CA55CE881CF0231800219779 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE871CF0231800219779 /* main.m */; };
-		CA55CE951CF025D100219779 /* TestHashidsWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE941CF025D100219779 /* TestHashidsWrapper.m */; };
-		CA55CE9A1CF0265B00219779 /* HashidsWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE471CEFF8EF00219779 /* HashidsWrapper.m */; };
+		CA55CE951CF025D100219779 /* NNLHashidsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE941CF025D100219779 /* NNLHashidsTests.m */; };
+		CA55CE9A1CF0265B00219779 /* NNLHashids.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE471CEFF8EF00219779 /* NNLHashids.m */; };
 		CA55CEA21CF0280900219779 /* hashids.c in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE721CF01A7400219779 /* hashids.c */; };
 /* End PBXBuildFile section */
 
@@ -29,8 +29,8 @@
 
 /* Begin PBXFileReference section */
 		CA55CE391CEFF87200219779 /* Hashids */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Hashids; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA55CE461CEFF8EF00219779 /* HashidsWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HashidsWrapper.h; sourceTree = "<group>"; };
-		CA55CE471CEFF8EF00219779 /* HashidsWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HashidsWrapper.m; sourceTree = "<group>"; };
+		CA55CE461CEFF8EF00219779 /* NNLHashids.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNLHashids.h; sourceTree = "<group>"; };
+		CA55CE471CEFF8EF00219779 /* NNLHashids.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNLHashids.m; sourceTree = "<group>"; };
 		CA55CE701CF01A7400219779 /* .editorconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .editorconfig; sourceTree = "<group>"; };
 		CA55CE711CF01A7400219779 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		CA55CE721CF01A7400219779 /* hashids.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hashids.c; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		CA55CE781CF01A7400219779 /* test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test.c; sourceTree = "<group>"; };
 		CA55CE871CF0231800219779 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CA55CE921CF025D100219779 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA55CE941CF025D100219779 /* TestHashidsWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestHashidsWrapper.m; sourceTree = "<group>"; };
+		CA55CE941CF025D100219779 /* NNLHashidsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNLHashidsTests.m; sourceTree = "<group>"; };
 		CA55CE961CF025D100219779 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,8 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				CA55CE6F1CF01A7400219779 /* hashids.c */,
-				CA55CE461CEFF8EF00219779 /* HashidsWrapper.h */,
-				CA55CE471CEFF8EF00219779 /* HashidsWrapper.m */,
+				CA55CE461CEFF8EF00219779 /* NNLHashids.h */,
+				CA55CE471CEFF8EF00219779 /* NNLHashids.m */,
 				CA55CE871CF0231800219779 /* main.m */,
 			);
 			path = Hashids;
@@ -112,7 +112,7 @@
 		CA55CE931CF025D100219779 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				CA55CE941CF025D100219779 /* TestHashidsWrapper.m */,
+				CA55CE941CF025D100219779 /* NNLHashidsTests.m */,
 				CA55CE961CF025D100219779 /* Info.plist */,
 			);
 			path = Tests;
@@ -205,7 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA55CE481CEFF8EF00219779 /* HashidsWrapper.m in Sources */,
+				CA55CE481CEFF8EF00219779 /* NNLHashids.m in Sources */,
 				CA55CE7B1CF01A7400219779 /* hashids.c in Sources */,
 				CA55CE881CF0231800219779 /* main.m in Sources */,
 			);
@@ -216,8 +216,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA55CEA21CF0280900219779 /* hashids.c in Sources */,
-				CA55CE9A1CF0265B00219779 /* HashidsWrapper.m in Sources */,
-				CA55CE951CF025D100219779 /* TestHashidsWrapper.m in Sources */,
+				CA55CE9A1CF0265B00219779 /* NNLHashids.m in Sources */,
+				CA55CE951CF025D100219779 /* NNLHashidsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +369,7 @@
 				CA55CE991CF025D100219779 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

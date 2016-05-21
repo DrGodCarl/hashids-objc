@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HashidsWrapper : NSObject
+@interface NNLHashids : NSObject
 
 - (instancetype)initWithSalt:(NSString *)salt;
 
