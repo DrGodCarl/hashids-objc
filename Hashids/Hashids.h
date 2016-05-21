@@ -10,4 +10,17 @@
 
 @interface Hashids : NSObject
 
+- (instancetype)initWithSalt:(NSString *)salt;
+
+- (instancetype)initWithSalt:(NSString *)salt
+               minHashLength:(NSUInteger)minHashLength;
+
+- (instancetype)initWithSalt:(NSString *)salt
+               minHashLength:(NSUInteger)minHashLength
+                    alphabet:(NSString *)alphabet;
+
+- (NSString *)encode:(NSNumber *)value, ... NS_REQUIRES_NIL_TERMINATION;
+
+- (NSArray<NSNumber*> *)decode:(NSString *)encodedValue;
+
 @end
