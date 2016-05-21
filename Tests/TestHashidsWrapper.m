@@ -1,33 +1,33 @@
 //
-//  TestHashids.m
-//  Hashids
+//  TestHashidsWrapper.m
+//  HashidsWrapper
 //
 //  Created by Carl Benson on 5/20/16.
 //  Copyright © 2016 Carl Benson. All rights reserved.
 //
 //  Tests based off of the Swift implementation's tests:
-//  https://github.com/malczak/hashids/blob/d6a446b/Tests/HashidsTests/HashidsTests.swift
+//  https://github.com/malczak/hashids/blob/d6a446b/Tests/HashidsWrapperTests/HashidsWrapperTests.swift
 
 #import <XCTest/XCTest.h>
-#import "Hashids.h"
+#import "HashidsWrapper.h"
 
 NSString * const SALT = @"this is my salt";
 
-@interface TestHashids : XCTestCase
+@interface TestHashidsWrapper : XCTestCase
 
 @end
 
-@implementation TestHashids
+@implementation TestHashidsWrapper
 
 - (void)testSimpleHash {
-    Hashids *hashids = [[Hashids alloc] initWithSalt:SALT];
+    HashidsWrapper *hashids = [[HashidsWrapper alloc] initWithSalt:SALT];
     NSString *result = [hashids encodeMany:@[@1, @2, @3]];
     XCTAssertEqualObjects(result, @"laHquq");
 }
 
 - (void)testSimpleRun {
     NSArray *testArray = @[@1, @2, @3];
-    Hashids *hashids = [[Hashids alloc] initWithSalt:SALT];
+    HashidsWrapper *hashids = [[HashidsWrapper alloc] initWithSalt:SALT];
     NSString *encoded = [hashids encodeMany:testArray];
     NSArray *decoded = [hashids decode:encoded];
     XCTAssertEqualObjects(testArray, decoded);
@@ -35,7 +35,7 @@ NSString * const SALT = @"this is my salt";
 
 - (void)testMultipleRuns {
     NSArray *testArray = @[@1, @2, @3];
-    Hashids *hashids = [[Hashids alloc] initWithSalt:SALT];
+    HashidsWrapper *hashids = [[HashidsWrapper alloc] initWithSalt:SALT];
     NSString *encoded = [hashids encodeMany:testArray];
     for (int i = 0; i < 10; i++) {
         XCTAssertEqualObjects(encoded, [hashids encodeMany:testArray]);
@@ -48,7 +48,7 @@ NSString * const SALT = @"this is my salt";
                                   @"xJ3MBFkB3PO" : @[@123456, @123456789],
                                   @"NZFzBrjhl" : @[@10, @123456, @1],
                                   };
-    Hashids *hashids = [[Hashids alloc] initWithSalt:SALT];
+    HashidsWrapper *hashids = [[HashidsWrapper alloc] initWithSalt:SALT];
     
     for (NSString *knownHash in knownHashes) {
         NSArray *values = knownHashes[knownHash];
@@ -58,7 +58,7 @@ NSString * const SALT = @"this is my salt";
 
 - (void)testMinHashLength {
     NSUInteger minHashLength = 20;
-    Hashids *hashids = [[Hashids alloc] initWithSalt:SALT minHashLength:minHashLength];
+    HashidsWrapper *hashids = [[HashidsWrapper alloc] initWithSalt:SALT minHashLength:minHashLength];
     for (int i = 0; i < 10; i++) {
         XCTAssertGreaterThanOrEqual([[hashids encode:@(i)] length], minHashLength);
     }
@@ -66,22 +66,22 @@ NSString * const SALT = @"this is my salt";
 
 - (void)testInstances {
     NSArray *testArray = @[@1, @2, @3, @1000];
-    Hashids *hashids1 = [[Hashids alloc] initWithSalt:SALT minHashLength:9 alphabet:@"abcdef0123456789"];
-    Hashids *hashids2 = [[Hashids alloc] initWithSalt:SALT minHashLength:9 alphabet:@"abcdef0123456789"];
+    HashidsWrapper *hashids1 = [[HashidsWrapper alloc] initWithSalt:SALT minHashLength:9 alphabet:@"abcdef0123456789"];
+    HashidsWrapper *hashids2 = [[HashidsWrapper alloc] initWithSalt:SALT minHashLength:9 alphabet:@"abcdef0123456789"];
     XCTAssertEqualObjects([hashids1 decode:[hashids2 encodeMany:testArray]], testArray);
 }
 
 - (void)testDifferentSalts {
     NSArray *testArray = @[@1, @2, @3];
-    Hashids *hashids1 = [[Hashids alloc] initWithSalt:SALT];
-    Hashids *hashids2 = [[Hashids alloc] initWithSalt:[SALT stringByAppendingString:@", not!"]];
+    HashidsWrapper *hashids1 = [[HashidsWrapper alloc] initWithSalt:SALT];
+    HashidsWrapper *hashids2 = [[HashidsWrapper alloc] initWithSalt:[SALT stringByAppendingString:@", not!"]];
     XCTAssertNotEqualObjects([hashids1 encodeMany:testArray], [hashids2 encodeMany:testArray]);
 }
 
 - (void)testOneAndMany {
     NSNumber *testNum = @4;
     NSArray *testArray = @[testNum];
-    Hashids *hashids = [[Hashids alloc] initWithSalt:SALT];
+    HashidsWrapper *hashids = [[HashidsWrapper alloc] initWithSalt:SALT];
     XCTAssertEqualObjects([hashids encodeMany:testArray], [hashids encode:testNum]);
 }
 

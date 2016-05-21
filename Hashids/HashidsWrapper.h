@@ -8,15 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Hashids : NSObject
+@interface HashidsWrapper : NSObject
 
 - (instancetype)initWithSalt:(NSString *)salt;
 
 - (instancetype)initWithSalt:(NSString *)salt
-               minHashLength:(NSUInteger)minHashLength;
+               minHashLength:(uint32_t)minHashLength;
 
 - (instancetype)initWithSalt:(NSString *)salt
-               minHashLength:(NSUInteger)minHashLength
+               minHashLength:(uint32_t)minHashLength
                     alphabet:(NSString *)alphabet;
 
 - (NSString *)encode:(NSNumber *)value;

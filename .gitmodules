@@ -1,0 +1,3 @@
+[submodule "Hashids/hashids.c"]
+	path = Hashids/hashids.c
+	url = git@github.com:tzvetkoff/hashids.c.git

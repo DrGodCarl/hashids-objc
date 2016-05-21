@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA55CE451CEFF8D600219779 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE441CEFF8D600219779 /* main.m */; };
-		CA55CE481CEFF8EF00219779 /* Hashids.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE471CEFF8EF00219779 /* Hashids.m */; };
-		CA55CE561CEFFE6A00219779 /* TestHashids.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE551CEFFE6A00219779 /* TestHashids.m */; };
-		CA55CE571CEFFF6900219779 /* Hashids.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE471CEFF8EF00219779 /* Hashids.m */; };
+		CA55CE481CEFF8EF00219779 /* HashidsWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE471CEFF8EF00219779 /* HashidsWrapper.m */; };
+		CA55CE7B1CF01A7400219779 /* hashids.c in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE721CF01A7400219779 /* hashids.c */; };
+		CA55CE881CF0231800219779 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE871CF0231800219779 /* main.m */; };
+		CA55CE951CF025D100219779 /* TestHashidsWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE941CF025D100219779 /* TestHashidsWrapper.m */; };
+		CA55CE9A1CF0265B00219779 /* HashidsWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE471CEFF8EF00219779 /* HashidsWrapper.m */; };
+		CA55CEA21CF0280900219779 /* hashids.c in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE721CF01A7400219779 /* hashids.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,12 +29,21 @@
 
 /* Begin PBXFileReference section */
 		CA55CE391CEFF87200219779 /* Hashids */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Hashids; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA55CE441CEFF8D600219779 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CA55CE461CEFF8EF00219779 /* Hashids.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hashids.h; sourceTree = "<group>"; };
-		CA55CE471CEFF8EF00219779 /* Hashids.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hashids.m; sourceTree = "<group>"; };
-		CA55CE4D1CEFFE4B00219779 /* HashidsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HashidsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA55CE511CEFFE4B00219779 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CA55CE551CEFFE6A00219779 /* TestHashids.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHashids.m; sourceTree = "<group>"; };
+		CA55CE461CEFF8EF00219779 /* HashidsWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HashidsWrapper.h; sourceTree = "<group>"; };
+		CA55CE471CEFF8EF00219779 /* HashidsWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HashidsWrapper.m; sourceTree = "<group>"; };
+		CA55CE701CF01A7400219779 /* .editorconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .editorconfig; sourceTree = "<group>"; };
+		CA55CE711CF01A7400219779 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		CA55CE721CF01A7400219779 /* hashids.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hashids.c; sourceTree = "<group>"; };
+		CA55CE731CF01A7400219779 /* hashids.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hashids.h; sourceTree = "<group>"; };
+		CA55CE741CF01A7400219779 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		CA55CE751CF01A7400219779 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		CA55CE761CF01A7400219779 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		CA55CE771CF01A7400219779 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CA55CE781CF01A7400219779 /* test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test.c; sourceTree = "<group>"; };
+		CA55CE871CF0231800219779 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CA55CE921CF025D100219779 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA55CE941CF025D100219779 /* TestHashidsWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestHashidsWrapper.m; sourceTree = "<group>"; };
+		CA55CE961CF025D100219779 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +54,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CA55CE4A1CEFFE4B00219779 /* Frameworks */ = {
+		CA55CE8F1CF025D100219779 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -57,7 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				CA55CE431CEFF8D600219779 /* Hashids */,
-				CA55CE4E1CEFFE4B00219779 /* HashidsTests */,
+				CA55CE931CF025D100219779 /* Tests */,
 				CA55CE3A1CEFF87200219779 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,7 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				CA55CE391CEFF87200219779 /* Hashids */,
-				CA55CE4D1CEFFE4B00219779 /* HashidsTests.xctest */,
+				CA55CE921CF025D100219779 /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,20 +85,37 @@
 		CA55CE431CEFF8D600219779 /* Hashids */ = {
 			isa = PBXGroup;
 			children = (
-				CA55CE441CEFF8D600219779 /* main.m */,
-				CA55CE461CEFF8EF00219779 /* Hashids.h */,
-				CA55CE471CEFF8EF00219779 /* Hashids.m */,
+				CA55CE6F1CF01A7400219779 /* hashids.c */,
+				CA55CE461CEFF8EF00219779 /* HashidsWrapper.h */,
+				CA55CE471CEFF8EF00219779 /* HashidsWrapper.m */,
+				CA55CE871CF0231800219779 /* main.m */,
 			);
 			path = Hashids;
 			sourceTree = "<group>";
 		};
-		CA55CE4E1CEFFE4B00219779 /* HashidsTests */ = {
+		CA55CE6F1CF01A7400219779 /* hashids.c */ = {
 			isa = PBXGroup;
 			children = (
-				CA55CE511CEFFE4B00219779 /* Info.plist */,
-				CA55CE551CEFFE6A00219779 /* TestHashids.m */,
+				CA55CE701CF01A7400219779 /* .editorconfig */,
+				CA55CE711CF01A7400219779 /* .gitignore */,
+				CA55CE721CF01A7400219779 /* hashids.c */,
+				CA55CE731CF01A7400219779 /* hashids.h */,
+				CA55CE741CF01A7400219779 /* LICENSE.md */,
+				CA55CE751CF01A7400219779 /* main.c */,
+				CA55CE761CF01A7400219779 /* Makefile */,
+				CA55CE771CF01A7400219779 /* README.md */,
+				CA55CE781CF01A7400219779 /* test.c */,
 			);
-			path = HashidsTests;
+			path = hashids.c;
+			sourceTree = "<group>";
+		};
+		CA55CE931CF025D100219779 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CA55CE941CF025D100219779 /* TestHashidsWrapper.m */,
+				CA55CE961CF025D100219779 /* Info.plist */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,21 +138,21 @@
 			productReference = CA55CE391CEFF87200219779 /* Hashids */;
 			productType = "com.apple.product-type.tool";
 		};
-		CA55CE4C1CEFFE4B00219779 /* HashidsTests */ = {
+		CA55CE911CF025D100219779 /* Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CA55CE521CEFFE4B00219779 /* Build configuration list for PBXNativeTarget "HashidsTests" */;
+			buildConfigurationList = CA55CE971CF025D100219779 /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
-				CA55CE491CEFFE4B00219779 /* Sources */,
-				CA55CE4A1CEFFE4B00219779 /* Frameworks */,
-				CA55CE4B1CEFFE4B00219779 /* Resources */,
+				CA55CE8E1CF025D100219779 /* Sources */,
+				CA55CE8F1CF025D100219779 /* Frameworks */,
+				CA55CE901CF025D100219779 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = HashidsTests;
-			productName = HashidsTests;
-			productReference = CA55CE4D1CEFFE4B00219779 /* HashidsTests.xctest */;
+			name = Tests;
+			productName = Tests;
+			productReference = CA55CE921CF025D100219779 /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -139,7 +167,7 @@
 					CA55CE381CEFF87200219779 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
-					CA55CE4C1CEFFE4B00219779 = {
+					CA55CE911CF025D100219779 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -157,13 +185,13 @@
 			projectRoot = "";
 			targets = (
 				CA55CE381CEFF87200219779 /* Hashids */,
-				CA55CE4C1CEFFE4B00219779 /* HashidsTests */,
+				CA55CE911CF025D100219779 /* Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CA55CE4B1CEFFE4B00219779 /* Resources */ = {
+		CA55CE901CF025D100219779 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -177,17 +205,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA55CE481CEFF8EF00219779 /* Hashids.m in Sources */,
-				CA55CE451CEFF8D600219779 /* main.m in Sources */,
+				CA55CE481CEFF8EF00219779 /* HashidsWrapper.m in Sources */,
+				CA55CE7B1CF01A7400219779 /* hashids.c in Sources */,
+				CA55CE881CF0231800219779 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CA55CE491CEFFE4B00219779 /* Sources */ = {
+		CA55CE8E1CF025D100219779 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA55CE571CEFFF6900219779 /* Hashids.m in Sources */,
-				CA55CE561CEFFE6A00219779 /* TestHashids.m in Sources */,
+				CA55CEA21CF0280900219779 /* hashids.c in Sources */,
+				CA55CE9A1CF0265B00219779 /* HashidsWrapper.m in Sources */,
+				CA55CE951CF025D100219779 /* TestHashidsWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,24 +319,24 @@
 			};
 			name = Release;
 		};
-		CA55CE531CEFFE4B00219779 /* Debug */ = {
+		CA55CE981CF025D100219779 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = HashidsTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nicknacklabs.HashidsTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicknacklabs.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		CA55CE541CEFFE4B00219779 /* Release */ = {
+		CA55CE991CF025D100219779 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = HashidsTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nicknacklabs.HashidsTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicknacklabs.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -332,11 +362,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CA55CE521CEFFE4B00219779 /* Build configuration list for PBXNativeTarget "HashidsTests" */ = {
+		CA55CE971CF025D100219779 /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CA55CE531CEFFE4B00219779 /* Debug */,
-				CA55CE541CEFFE4B00219779 /* Release */,
+				CA55CE981CF025D100219779 /* Debug */,
+				CA55CE991CF025D100219779 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
