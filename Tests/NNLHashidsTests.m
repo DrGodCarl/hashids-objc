@@ -12,6 +12,7 @@
 #import "NNLHashids.h"
 
 NSString * const SALT = @"this is my salt";
+NSString * const PEPPER = @"this is my pepper";
 
 @interface NNLHashidsTests : XCTestCase
 
@@ -58,7 +59,7 @@ NSString * const SALT = @"this is my salt";
 }
 
 - (void)testMinHashLength {
-    NSUInteger minHashLength = 20;
+    uint32_t minHashLength = 20;
     NNLHashids *hashids = [[NNLHashids alloc] initWithSalt:SALT minHashLength:minHashLength];
     for (int i = 0; i < 10; i++) {
         XCTAssertGreaterThanOrEqual([[hashids encode:@(i)] length], minHashLength);
@@ -75,7 +76,7 @@ NSString * const SALT = @"this is my salt";
 - (void)testDifferentSalts {
     NSArray<NSNumber*> *testArray = @[@1, @2, @3];
     NNLHashids *hashids1 = [[NNLHashids alloc] initWithSalt:SALT];
-    NNLHashids *hashids2 = [[NNLHashids alloc] initWithSalt:[SALT stringByAppendingString:@", not!"]];
+    NNLHashids *hashids2 = [[NNLHashids alloc] initWithSalt:[SALT stringByAppendingString:PEPPER]];
     XCTAssertNotEqualObjects([hashids1 encodeMany:testArray], [hashids2 encodeMany:testArray]);
 }
 
@@ -95,6 +96,49 @@ NSString * const SALT = @"this is my salt";
     XCTAssertEqualObjects(testArray, [hashids decode:[hashids encodeMany:testArray]]);
 }
 
+#pragma mark - Tested examples from the README
+- (void)testExamples_SIMPLE {
+    NSNumber *value = @12345;
+    NSString *hash = @"NkK9";
+    NNLHashids *hashids = [[NNLHashids alloc] initWithSalt:SALT];
+
+    XCTAssertEqualObjects([hashids encode:value], hash);
+    XCTAssertEqualObjects([hashids decode:hash], @[value]);
+    
+    NNLHashids *badHashids = [[NNLHashids alloc] initWithSalt:PEPPER];
+    XCTAssertEqualObjects([badHashids decode:hash], @[@25264]); // <-- oops...
+}
+
+- (void)testExamples_MANY {
+    NSArray<NSNumber*> *values = @[@683, @94108, @123, @5];
+    NSString *hash = @"aBMswoO2UB3Sj";
+    NNLHashids *hashids = [[NNLHashids alloc] initWithSalt:SALT];
+    
+    XCTAssertEqualObjects([hashids encodeMany:values], hash);
+    XCTAssertEqualObjects([hashids decode:hash], values);
+}
+
+- (void)testExamples_MIN_HASH {
+    NSNumber *value = @1;
+    NSString *hash = @"gB0NV05e";
+    NNLHashids *hashids = [[NNLHashids alloc] initWithSalt:SALT
+                                             minHashLength:8];
+    XCTAssertEqualObjects([hashids encode:value], hash);
+    XCTAssertEqualObjects([hashids decode:hash], @[value]);
+}
+
+- (void)testExamples_ALPHABET {
+    NSNumber *value = @1234567;
+    NSString *hash = @"b332db5";
+    NNLHashids *hashids = [[NNLHashids alloc] initWithSalt:SALT
+                                             minHashLength:0
+                                                  alphabet:@"0123456789abcdef"];
+    
+    XCTAssertEqualObjects([hashids encode:value], hash);
+    XCTAssertEqualObjects([hashids decode:hash], @[value]);
+}
+
+#pragma mark - Performance tests
 // Uncomment and watch memory to verify no leaks.
 //- (void)testLots {
 //    NNLHashids *hashids = [[NNLHashids alloc] initWithSalt:SALT];
