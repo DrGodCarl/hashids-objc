@@ -55,11 +55,11 @@ NSArray<NSNumber*> *decoded = [hashids decode:@"NkK9"]; // @[@12345]
 
 #### Decoding with different salt
 
-Decoding will not work if salt is changed:
+Unfortunately, unlike other implementations, decoding will still work with a different salt due to details in the C implementation. Be careful out there:
 
 ```objectivec
 NNLHashids *hashids = [[NNLHashids alloc] initWithSalt:@"this is my pepper"];
-NSArray<NSNumber*> *decoded = [hashids decode:@"NkK9"]; // @[]
+NSArray<NSNumber*> *decoded = [hashids decode:@"NkK9"]; // @[@25264] <-- oops...
 ```
 
 #### Encoding several numbers
