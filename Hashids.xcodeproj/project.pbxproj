@@ -205,8 +205,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA55CE481CEFF8EF00219779 /* NNLHashids.m in Sources */,
 				CA55CE7B1CF01A7400219779 /* hashids.c in Sources */,
+				CA55CE481CEFF8EF00219779 /* NNLHashids.m in Sources */,
 				CA55CE881CF0231800219779 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
