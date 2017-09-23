@@ -1,6 +1,6 @@
 
 Pod::Spec.new do |s|
-  s.name          = "hashids-objc"
+  s.name          = "NNLHashids"
   s.version       = "1.0.2"
   s.summary       = "An Objective-C port of the Hashids project."
   s.description   = <<-DESC
