@@ -11,11 +11,15 @@ Installation
 
 #### CocoaPods
 
-This is going to be a Pod. Working on it.
+All you need to do is add to your Podfile the following:
+```
+pod 'NNLHashids'
+```
+It's namespaced so it doesn't conflict with the previous hashids project.
 
 #### Git Submodules
 
-Just run the following in your project whereever you wish this project to end up:
+Just run the following in your project wherever you wish this project to end up:
 ```
 git submodule add git@github.com:DrGodCarl/hashids-objc.git
 git submodule update --init --recursive
@@ -120,14 +124,14 @@ Curses! #$%@
 This code was written with the intent of placing created hashes in visible places - like the URL. Which makes it unfortunate if generated hashes accidentally formed a bad word.
 
 Therefore, the algorithm tries to avoid generating most common English curse words. This is done by never placing the following letters next to each other:
-	
+
 	c, C, s, S, f, F, h, H, u, U, i, I, t, T
-	
+
 Changelog
 -------
 **1.0.0**
   - This is brand new! No changes.
-  
+
 License
 -------
 
