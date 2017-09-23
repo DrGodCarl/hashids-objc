@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA3855571F76FB3C008E2D4C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE871CF0231800219779 /* main.m */; };
 		CA55CE481CEFF8EF00219779 /* NNLHashids.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE471CEFF8EF00219779 /* NNLHashids.m */; };
 		CA55CE7B1CF01A7400219779 /* hashids.c in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE721CF01A7400219779 /* hashids.c */; };
-		CA55CE881CF0231800219779 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE871CF0231800219779 /* main.m */; };
 		CA55CE951CF025D100219779 /* NNLHashidsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE941CF025D100219779 /* NNLHashidsTests.m */; };
 		CA55CE9A1CF0265B00219779 /* NNLHashids.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE471CEFF8EF00219779 /* NNLHashids.m */; };
 		CA55CEA21CF0280900219779 /* hashids.c in Sources */ = {isa = PBXBuildFile; fileRef = CA55CE721CF01A7400219779 /* hashids.c */; };
@@ -205,9 +205,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA3855571F76FB3C008E2D4C /* main.m in Sources */,
 				CA55CE7B1CF01A7400219779 /* hashids.c in Sources */,
 				CA55CE481CEFF8EF00219779 /* NNLHashids.m in Sources */,
-				CA55CE881CF0231800219779 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

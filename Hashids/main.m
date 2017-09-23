@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NNLHashids.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        NNLHashids *ids = [[NNLHashids alloc] initWithSalt:@"hello"];
+        NSString *name = [ids encode:@1];
+        NSLog(name);
         // insert code here...
         NSLog(@"Hello, World!");
     }
