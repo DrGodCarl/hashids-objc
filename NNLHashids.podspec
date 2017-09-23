@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.author        = { "Carl D. Benson" => "carl.d.benson@gmail.com" }
   s.source        = {
     :git => "https://github.com/DrGodCarl/hashids-objc.git",
-    :tag => "master",
+    :tag => "#{s.version}",
     :submodules => true
   }
   s.source_files  = "Hashids", "Hashids/**/*.{h,m,c}"
