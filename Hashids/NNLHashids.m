@@ -66,7 +66,7 @@
         unsigned long long value = [values[i] unsignedLongLongValue];
         vals[i] = value;
     }
-    uint32_t estimation = hashids_estimate_encoded_size(self.hashids, count, vals);
+    size_t estimation = hashids_estimate_encoded_size(self.hashids, count, vals);
     char buffer[estimation];
     if (hashids_encode(self.hashids, buffer, (uint32_t)[values count], vals)) {
         return [NSString stringWithCString:buffer encoding:NSASCIIStringEncoding];
@@ -76,9 +76,9 @@
 
 - (NSArray<NSNumber*> *)decode:(NSString *)encodedValue {
     const char * cEncodedValue = [encodedValue cStringUsingEncoding:NSASCIIStringEncoding];
-    uint32_t numberCount = hashids_numbers_count(self.hashids, (char *)cEncodedValue);
+    size_t numberCount = hashids_numbers_count(self.hashids, (char *)cEncodedValue);
     unsigned long long numbers[numberCount];
-    unsigned int resultCount = hashids_decode(self.hashids, (char *)cEncodedValue, numbers);
+    size_t resultCount = hashids_decode(self.hashids, (char *)cEncodedValue, numbers);
     NSMutableArray<NSNumber*> *result = [[NSMutableArray alloc] initWithCapacity:resultCount];
     for (int i = 0; i < resultCount; i++) {
         [result addObject:@(numbers[i])];
