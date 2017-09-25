@@ -131,8 +131,10 @@ Changelog
 -------
 **1.0.0**
   - This is brand new! No changes.
+  
 **1.0.1**
   - Updated the underlying version of the C library.
+  
 **1.0.2**
   - Added Podspec file and deployed to Cocoapods.
 
